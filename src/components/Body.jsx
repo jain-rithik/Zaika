@@ -6,14 +6,16 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import OfflinePage from "./OfflinePage";
 import LocationContext from "../utils/LocationContext";
 import CityContext from "../utils/CityContext";
+import toast from "react-hot-toast";
+import noresult from "../../logos/no-results.png"
 
 const Body = () => {
   const [listOfRest, setListOfRest] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   let [title, setTitle] = useState("");
-  const {location} = useContext(LocationContext);
-  const {setCity} = useContext(CityContext);
+  const { location } = useContext(LocationContext);
+  const { setCity } = useContext(CityContext);
 
   useEffect(() => {
     fetchData();
@@ -34,7 +36,11 @@ const Body = () => {
     setfilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setCity(json?.data?.cards[json?.data?.cards.length - 1]?.card?.card?.citySlug?.toUpperCase() || "");
+    setCity(
+      json?.data?.cards[
+        json?.data?.cards.length - 1
+      ]?.card?.card?.citySlug?.toUpperCase() || ""
+    );
 
     // Extract unique identifiers from existing objects
     const existingIds = new Set(
@@ -64,7 +70,10 @@ const Body = () => {
       "Top restaurant chains";
     setTitle(title);
 
-    if (json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants === undefined) {
+    if (
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants === undefined
+    ) {
       fetchMobileData();
     }
   };
@@ -136,6 +145,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             setfilteredRestaurant(listOfRest);
+            toast.success("All Restaurants Displayed");
           }}
         >
           All Restaurants
@@ -147,6 +157,7 @@ const Body = () => {
               (res) => res.info.avgRating > 4.3
             );
             setfilteredRestaurant(filteredRest);
+            toast.success("Highly Rated Restaurants");
           }}
         >
           Ratings 4.3+
@@ -158,6 +169,7 @@ const Body = () => {
               (res) => res?.info?.veg === true
             );
             setfilteredRestaurant(filteredRest);
+            toast.success("Showing Pure Veg Restaurants");
           }}
         >
           Pure Veg
@@ -169,6 +181,7 @@ const Body = () => {
               (res) => res?.info?.sla?.deliveryTime <= 25
             );
             setfilteredRestaurant(filteredRest);
+            toast.success("Fast Delivery Restaurants Displayed");
           }}
         >
           Fast Delivery
@@ -186,6 +199,7 @@ const Body = () => {
               return costForTwo <= 300;
             });
             setfilteredRestaurant(filteredRest);
+            toast.success("Budget-Friendly Restaurants Displayed");
           }}
         >
           Less than ₹300
@@ -203,6 +217,7 @@ const Body = () => {
               return costForTwo > 300 && costForTwo <= 600;
             });
             setfilteredRestaurant(filteredRest);
+            toast.success("Discover Dining Deals: ₹300 - ₹600");
           }}
         >
           Range: ₹300 - ₹600
@@ -210,16 +225,25 @@ const Body = () => {
       </div>
       <div className="Food-menu">
         <h2 className="food-menu-title">{title}</h2>
-        <div className="Food-card">
-          {filteredRestaurant.map((restaurant) => (
-            <Link
-              key={restaurant.info.id}
-              to={"/restaurants/" + restaurant.info.id}
-            >
-              <RestaurantCard resData={restaurant} />
-            </Link>
-          ))}
-        </div>
+        {filteredRestaurant.length === 0 ? (
+          <div className="no-results-found">
+            <img
+              src={noresult}
+              alt="Search Results Are Finished - No Results Found Cartoon@clipartmax.com"
+            />
+          </div>
+        ) : (
+          <div className="Food-card">
+            {filteredRestaurant.map((restaurant) => (
+              <Link
+                key={restaurant.info.id}
+                to={"/restaurants/" + restaurant.info.id}
+              >
+                <RestaurantCard resData={restaurant} />
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

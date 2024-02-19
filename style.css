@@ -5,6 +5,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 /* HEADER */
 .header{
     display: flex;
@@ -176,6 +180,17 @@ li > span > i {
     justify-content: center;
     font-size: 18px;
     cursor: pointer;
+}
+
+.no-results-found{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 130px;
+}
+
+.no-results-found img{
+  width: 325px;
 }
 
 .filter-btn {
@@ -704,6 +719,7 @@ li > span > i {
     left: 11%;
     box-shadow: 0 3px 8px #e9e9eb;
     background-color: #fff;
+
   }
 
   /*MENU*/
@@ -1212,70 +1228,25 @@ footer {
   align-items: center;
 }
 
-/* .item-price button {
-  cursor: pointer;
-    font-family: inherit;
-    font-size: inherit;
-    letter-spacing: .05rem;
-    color: #ffffff;
-    background: red;
-    border: none;
-    border-radius: 500px;
-    outline: none;
-    margin: 0;
-    padding: 10px 9px;
-    font-size: 11px;
-    font-weight: 700;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
- }
- 
- .item-price button span {
-  position: relative;
-  z-index: 10;
-  transition: color 0.4s;
- }
- 
- .item-price button:hover span {
-  color: white;
- }
- 
- .item-price button::before,
- .item-price button::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
- }
- 
- .item-price button::before {
-  content: "";
-  background: #000;
-  width: 120%;
-  left: -10%;
-  transform: skew(30deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
- }
- 
- .item-price button:hover::before {
-  transform: translate3d(100%, 0, 0);
- } */
-
  .inc-dec-count{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 83px;
-  border: 1px solid #d4d5d9;
+  width: 92px;
+  border: 0px solid #d4d5d9;
   text-align: center;
   font-weight: 600;
   color: #60b246;
   line-height: 30px;
-  height: 30px;
-  user-select: none
+  height: 31px;
+  user-select: none;
+  box-shadow: 0 3px 8px #e9e9eb;
+border-radius: 4px;
+ }
+
+ .item-price h4 {
+  min-width: 69px;
+    text-align: end;
  }
 
  .minus-counter{
@@ -1302,7 +1273,7 @@ footer {
 
 /******** Toast **********/
 .notification-container{
-  max-height: 53px;
+  max-height: 67px;
     overflow: hidden;
 }
 /******** Toast **********/
@@ -1324,6 +1295,10 @@ footer {
   }
   .Food-card {
 justify-content: center;
+  }
+
+  .no-results-found{
+    margin: 60px;
   }
 }
 
@@ -1450,6 +1425,10 @@ justify-content: center;
 
   .foot1{
     max-width: 50% !important;
+  }
+
+  .no-results-found img {
+    width: 200px;
   }
 }
 /*RESPONSIVE*/

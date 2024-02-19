@@ -3,12 +3,17 @@ import { ResMenuShimmer } from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useEffect } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const restInfo = useRestaurantMenu(resId);
   console.log(restInfo);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [resId])
 
   if (restInfo === null) {
     return <ResMenuShimmer />;
