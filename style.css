@@ -18,6 +18,11 @@ html, body {
     padding: 5px;
     box-shadow: 0 0 10px #00000040;
     user-select: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
 }
 
 .logo {
@@ -137,6 +142,11 @@ li > span > i {
 
 .h-online{
   cursor: default !important;
+}
+
+.empty{
+  height: 100px;
+  width: 100%;
 }
 
 /* HEADER */
