@@ -6,6 +6,10 @@
 
 Zaika is a dynamic food delivery website created with the Swiggy API. It provides users with a seamless and interactive experience for discovering and ordering food from various restaurants.
 
+## Live Project
+
+Explore Zaika live: [Zaika Live](https://zaika-foods.netlify.app/)
+
 ## Key Features
 
 - **Location-wise Rendering:** Discover restaurants based on your location. Zaika intelligently adapts to your location or defaults to a specific city.
@@ -52,10 +56,6 @@ Zaika is a dynamic food delivery website created with the Swiggy API. It provide
 2. Navigate to the project directory.
 3. Run `npm install` to install dependencies.
 4. Run `npm start` to start the development server.
-
-## Live Project
-
-Explore Zaika live: [Zaika Live](https://zaika-foods.netlify.app/)
 
 ## Contribution
 Feel free to contribute to this project by opening issues or creating pull requests. Your feedback and contributions are highly appreciated!
