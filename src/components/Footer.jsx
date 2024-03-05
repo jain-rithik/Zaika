@@ -70,11 +70,11 @@ const Footer = () => {
               <div className="foot5">
                 <h6>SOCIAL LINKS</h6>
                 <div className="icons">
-                  <a href="#"><i className="fa-brands fa-linkedin" style={{ color: '#000000' }}></i></a>
-                  <a href="#"><i className="fa-brands fa-instagram" style={{ color: '#000000' }}></i></a>
-                  <a href="#"><i className="fa-brands fa-twitter" style={{ color: '#000000' }}></i></a>
-                  <a href="#"><i className="fa-brands fa-youtube" style={{ color: '#000000' }}></i></a>
-                  <a href="#"><i className="fa-brands fa-facebook" style={{ color: '#000000' }}></i></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/jainrithik/"><i className="fa-brands fa-linkedin" style={{ color: '#000000' }}></i></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/jainrithik/"><i className="fa-brands fa-instagram" style={{ color: '#000000' }}></i></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/jainrithik/"><i className="fa-brands fa-twitter" style={{ color: '#000000' }}></i></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/jainrithik/"><i className="fa-brands fa-youtube" style={{ color: '#000000' }}></i></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/jainrithik/"><i className="fa-brands fa-facebook" style={{ color: '#000000' }}></i></a>
                 </div>
                 <div className="blank1"></div>
                 <section className="store">
