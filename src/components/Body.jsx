@@ -23,7 +23,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      `https://thingproxy.freeboard.io/fetch/https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D${location.latitude}%26lng%3D${location.longitude}`
+      `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D${location.latitude}%26lng%3D${location.longitude}`
     );
     // "https://instafood.onrender.com/api/restaurants?lat=19.0918606&lng=72.8825928"
     const json = await data.json();
@@ -80,7 +80,7 @@ const Body = () => {
 
   const fetchMobileData = async () => {
     const mData = await fetch(
-      `https://thingproxy.freeboard.io/fetch/https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fhomepage%2FgetCards%3Flat%3D${location.latitude}%26lng%3D${location.longitude}`
+      `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fhomepage%2FgetCards%3Flat%3D${location.latitude}%26lng%3D${location.longitude}`
     );
 
     const json = await mData.json();
