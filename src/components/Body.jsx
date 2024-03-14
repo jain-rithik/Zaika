@@ -23,9 +23,10 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D${location.latitude}%26lng%3D${location.longitude}`
+      `https://zaika-server.onrender.com/api/restaurants?lat=${location.latitude}&lng=${location.longitude}`
     );
     // "https://instafood.onrender.com/api/restaurants?lat=19.0918606&lng=72.8825928"
+    // https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D${location.latitude}%26lng%3D${location.longitude}
     const json = await data.json();
 
     console.log(json);
