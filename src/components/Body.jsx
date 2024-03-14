@@ -81,9 +81,9 @@ const Body = () => {
 
   const fetchMobileData = async () => {
     const mData = await fetch(
-      `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fhomepage%2FgetCards%3Flat%3D${location.latitude}%26lng%3D${location.longitude}`
+      `https://zaika-server.onrender.com/mapi/restaurants?lat=${location.latitude}&lng=${location.longitude}`
     );
-
+    // https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fmapi%2Fhomepage%2FgetCards%3Flat%3D${location.latitude}%26lng%3D${location.longitude}
     const json = await mData.json();
 
     setListOfRest(
